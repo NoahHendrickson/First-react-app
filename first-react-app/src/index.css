@@ -1,0 +1,120 @@
+:root {
+  --my-blue: rgb(0, 202, 202);
+  --my-orange: rgb(216, 86, 0);
+  --black: rgb(21, 22, 26);
+  --dark: rgb(2, 142, 119);
+  /* --mid: rgb(0, 202, 202); */
+  --mid: rgb(32, 176, 184);
+  --mid-light: rgb(7, 214, 175);
+  --light: rgb(145, 255, 156);
+  --white: rgba(244, 246, 231, 1);
+  --orange: rgb(253, 117, 73);
+  --grey: rgb(67, 123, 226);
+}
+
+* {
+  font-family: neusa-next-std, sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+ul {
+  padding: 0px;
+  list-style: none;
+}
+
+li,
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: var(--mid);
+  position: relative;
+  z-index: 2;
+}
+
+.nav__logo {
+  width: 175px;
+  margin: 15px auto 15px 15px;
+}
+
+.navPriceSlide__items {
+  display: flex;
+}
+
+.navbar__buttons {
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navButton {
+  position: relative;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  margin: 25px;
+  background-color: rgba(7, 214, 175, 0.5);
+  border-radius: 10px;
+}
+
+.navButton:hover {
+  background-color: rgba(7, 214, 175, 1);
+  color: var(--black);
+}
+
+.icon {
+  margin: 0px 15px;
+  font-size: 1.75em;
+}
+
+.dropdown {
+  position: absolute;
+  top: 60px;
+  right: 0px;
+  background-color: var(--mid-light);
+  border-radius: 15px;
+}
+
+.dropdown__title {
+  margin-top: 15px;
+  color: var(--black);
+}
+
+form {
+  color: var(--black);
+  padding: 25px;
+}
+
+.body {
+  display: flex;
+  height: 100%;
+}
+
+.wallet {
+  position: relative;
+  z-index: 1;
+  background-color: var(--black);
+  width: 35%;
+  height: 100%;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+}
+
+.wallet__title {
+  color: var(--white);
+}
+
+.portfolioContent {
+  width: 65%;
+  background-color: var(--black);
+}
+
+.portfolioContent__title {
+  color: var(--white);
+}
