@@ -2,18 +2,20 @@
   --my-blue: rgb(0, 202, 202);
   --my-orange: rgb(216, 86, 0);
   --black: rgb(21, 22, 26);
+  /* --darkest: rgb(19, 24, 15); */
+  --darkest: rgb(21, 26, 37);
   --dark: rgb(2, 142, 119);
   /* --mid: rgb(0, 202, 202); */
   --mid: rgb(32, 176, 184);
   --mid-light: rgb(7, 214, 175);
   --light: rgb(145, 255, 156);
   --white: rgba(244, 246, 231, 1);
-  --orange: rgb(253, 117, 73);
+  --orange: rgb(247, 94, 44);
   --grey: rgb(67, 123, 226);
 }
 
 * {
-  font-family: neusa-next-std, sans-serif;
+  font-family: sofia-pro, sans-serif;
   font-weight: 400;
   margin: 0;
 }
@@ -60,12 +62,12 @@ a {
   height: 50px;
   width: 50px;
   margin: 25px;
-  background-color: rgba(7, 214, 175, 0.5);
+  background-color: rgba(145, 255, 156, 0.25);
   border-radius: 10px;
 }
 
 .navButton:hover {
-  background-color: rgba(7, 214, 175, 1);
+  background-color: rgba(145, 255, 156, 1);
   color: var(--black);
 }
 
@@ -78,18 +80,35 @@ a {
   position: absolute;
   top: 60px;
   right: 0px;
-  background-color: var(--mid-light);
+  background-color: var(--light);
   border-radius: 15px;
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 1);
 }
 
 .dropdown__title {
+  font-weight: 600;
   margin-top: 15px;
-  color: var(--black);
+  color: var(--darkest);
 }
 
 form {
+  text-align: left;
   color: var(--black);
-  padding: 25px;
+  padding: 15px 25px 25px 25px;
+}
+
+input {
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: solid var(--darkest) 5px;
+  border-radius: 10px;
+  background-color: var(--white);
+  outline: none;
+}
+
+input::placeholder {
+  padding: 5px;
 }
 
 .body {
@@ -100,21 +119,23 @@ form {
 .wallet {
   position: relative;
   z-index: 1;
-  background-color: var(--black);
+  background-color: var(--darkest);
   width: 35%;
   height: 100%;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 5px rgb(12, 14, 11);
 }
 
 .wallet__title {
   color: var(--white);
+  margin-top: 15px;
 }
 
 .portfolioContent {
   width: 65%;
-  background-color: var(--black);
+  background-color: var(--darkest);
 }
 
 .portfolioContent__title {
   color: var(--white);
+  margin-top: 15px;
 }

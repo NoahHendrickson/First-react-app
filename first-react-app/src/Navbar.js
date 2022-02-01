@@ -7,9 +7,11 @@ function Navbar() {
       <Logo className="nav__logo" />
       <NavPriceSlide />
       <NavButton icons="😇" />
-      <NavButton icons="🤑" />
-      <NavButton icons="🤬">
+      <NavButton icons="🤑">
         <DropdownMenu />
+      </NavButton>
+      <NavButton icons="🤬">
+        <DropdownMenu title="feedback" />
       </NavButton>
     </Nav>
   );
@@ -47,10 +49,26 @@ function NavButton(props) {
   );
 }
 
-function DropdownMenu() {
+function DropdownMenu(props) {
   return (
     <div className="dropdown">
-      <h3 className="dropdown__title">Feedback / Support</h3>
+      <h3 className="dropdown__title">{props.title}</h3>
+      <DropdownItem />
+    </div>
+  );
+}
+
+function DropdownItem() {
+  return (
+    <div>
+      <DropdownForm />
+    </div>
+  );
+}
+
+function DropdownForm() {
+  return (
+    <div>
       <form>
         <label>Subject</label>
         <input placeholder="Whats Up" />
