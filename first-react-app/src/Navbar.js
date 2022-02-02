@@ -1,42 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ReactComponent as Logo } from "./icons/crpo-logo.svg";
+import onClickOutside from "react-onclickoutside";
+import NavPriceSlide from "./NavPriceSlide";
 
-function Navbar() {
+const Navbar = () => {
   return (
     <Nav>
       <Logo className="nav__logo" />
       <NavPriceSlide />
-      <NavButton icons="😇" />
+      <NavButton icons="😇">
+        <DropdownMenu title="Profile">
+          <ProfileForm />
+        </DropdownMenu>
+      </NavButton>
       <NavButton icons="🤑">
-        <DropdownMenu />
+        <DropdownMenu title="Buy Me Chipotle">
+          <DonateForm />
+        </DropdownMenu>
       </NavButton>
       <NavButton icons="🤬">
-        <DropdownMenu title="feedback" />
+        <DropdownMenu title="feedback">
+          <FeedbackForm />
+        </DropdownMenu>
       </NavButton>
     </Nav>
   );
-}
+};
 
-function Nav(props) {
+const Nav = (props) => {
   return (
     <nav className="navbar">
       <ul className="navbar__buttons">{props.children}</ul>
     </nav>
   );
-}
+};
 
-function NavPriceSlide() {
-  return (
-    <div className="navPriceSlide">
-      <ul className="navPriceSlide__items">
-        <li className="NavPriceSlide__asset">Eth 2700</li>
-        <li>Sand 4.00</li>
-      </ul>
-    </div>
-  );
-}
-
-function NavButton(props) {
+const NavButton = (props) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -47,36 +46,68 @@ function NavButton(props) {
       {open && props.children}
     </li>
   );
-}
+};
 
-function DropdownMenu(props) {
+const DropdownMenu = (props) => {
   return (
     <div className="dropdown">
       <h3 className="dropdown__title">{props.title}</h3>
-      <DropdownItem />
+      <DropdownItem>{props.children}</DropdownItem>
     </div>
   );
-}
+};
 
-function DropdownItem() {
+const DropdownItem = (props) => {
+  return <div>{props.children}</div>;
+};
+
+const ProfileForm = () => {
   return (
     <div>
-      <DropdownForm />
+      <form>
+        <label>Email</label>
+        <input placeholder="Email" />
+        <label>Password</label>
+        <input placeholder="Shh .. " />
+        <div className="profile__btns">
+          <input type="submit" className="submit__input" value="Login" />
+          <input type="submit" className="submit__input" value="Sign Up" />
+        </div>
+      </form>
     </div>
   );
-}
+};
 
-function DropdownForm() {
+const FeedbackForm = () => {
   return (
     <div>
       <form>
         <label>Subject</label>
         <input placeholder="Whats Up" />
         <label>Message</label>
-        <input placeholder="Dive Deep" />
+        <input className="feedback__input" placeholder="Dive Deep" />
+        <input type="submit" className="submit__input" />
       </form>
     </div>
   );
-}
+};
+
+const DonateForm = () => {
+  return (
+    <div>
+      <form>
+        <label>Leave A Note</label>
+        <input placeholder="Chipotle or Starbys?" />
+        <p>Send some</p>
+        <div className="donate__btns">
+          <input className="submit__input" type="submit" value="BTC" />
+          <input className="submit__input" type="submit" value="ETH" />
+          <input className="submit__input" type="submit" value="Cashapp" />
+          <input className="submit__input" type="submit" value="Paypal" />
+        </div>
+      </form>
+    </div>
+  );
+};
 
 export default Navbar;
