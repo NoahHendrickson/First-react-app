@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ReactComponent as Logo } from "./icons/crpo-logo.svg";
 import onClickOutside from "react-onclickoutside";
 import NavPriceSlide from "./NavPriceSlide";
@@ -52,13 +52,9 @@ const DropdownMenu = (props) => {
   return (
     <div className="dropdown">
       <h3 className="dropdown__title">{props.title}</h3>
-      <DropdownItem>{props.children}</DropdownItem>
+      <div>{props.children}</div>
     </div>
   );
-};
-
-const DropdownItem = (props) => {
-  return <div>{props.children}</div>;
 };
 
 const ProfileForm = () => {
